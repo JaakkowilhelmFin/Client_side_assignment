@@ -23,7 +23,7 @@ namespace MusicGenreGenerator
         {
             _httpClient = httpClient;
         }
-
+        /* Actual implementation of datasource can be seen below*/
         public async Task<List<string>> GetStringsAsync()
         {
             var response = await _httpClient.GetStringAsync("https://binaryjazz.us/wp-json/genrenator/v1/genre/5");
@@ -53,7 +53,7 @@ namespace MusicGenreGenerator
                 httpClient.Dispose(); 
             }
             Console.WriteLine();
-            Console.WriteLine("Press Enter to exit...");
+            Console.WriteLine("Press keyboard to exit...");
             Console.ReadLine();
         }
     }
