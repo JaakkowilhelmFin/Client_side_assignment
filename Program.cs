@@ -17,13 +17,16 @@ namespace MusicGenreGenerator
     //  and its implementaion ( interface API)
     public class ApiService : IApiService
     {
+        /* http requests and receiving http responses are identified by URL*/
         private readonly HttpClient _httpClient;
 
+        /* constructor*/
         public ApiService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
         /* Actual implementation of datasource can be seen below*/
+        /* method: */
         public async Task<List<string>> GetStringsAsync()
         {
             var response = await _httpClient.GetStringAsync("https://binaryjazz.us/wp-json/genrenator/v1/genre/5");
@@ -53,7 +56,7 @@ namespace MusicGenreGenerator
                 httpClient.Dispose(); 
             }
             Console.WriteLine();
-            Console.WriteLine("Press keyboard to exit...");
+            Console.WriteLine("Press a any key on keyboard to exit...");
             Console.ReadLine();
         }
     }
